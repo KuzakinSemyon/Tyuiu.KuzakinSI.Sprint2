@@ -5,9 +5,9 @@ namespace Tyuiu.KuzakinSI.Sprint2.Task0.V26.Lib
 {
     public class DataService : ISprint2Task0V26
     {
-        public bool[] GetCompareOperations(int x, int y)
+        public Boolean[] GetCompareOperations(int x, int y)
         {
-            return new bool[]
+            return new Boolean[]
             {
                 x == y,
                 x != y, 
