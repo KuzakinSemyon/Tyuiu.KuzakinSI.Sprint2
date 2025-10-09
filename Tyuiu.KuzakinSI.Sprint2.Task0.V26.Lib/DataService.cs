@@ -9,7 +9,7 @@ namespace Tyuiu.KuzakinSI.Sprint2.Task0.V26.Lib
         {
             return new bool[]
             {
-                x == (y + 70),
+                x == (y + 71),
                 x != (y + 70),
                 x < y,
                 x > y,
