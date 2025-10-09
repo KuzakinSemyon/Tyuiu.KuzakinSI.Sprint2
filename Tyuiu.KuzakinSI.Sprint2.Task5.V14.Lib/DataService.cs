@@ -18,28 +18,28 @@ namespace Tyuiu.KuzakinSI.Sprint2.Task5.V14.Lib
             switch (dayOfWeek)
             {
                 case 1:
-                    dayName = "понедельник";
+                    dayName = "Понедельник";
                     break;
                 case 2:
-                    dayName = "вторник";
+                    dayName = "Вторник";
                     break;
                 case 3:
-                    dayName = "среда";
+                    dayName = "Среда";
                     break;
                 case 4:
-                    dayName = "четверг";
+                    dayName = "Четверг";
                     break;
                 case 5:
-                    dayName = "пятница";
+                    dayName = "Пятница";
                     break;
                 case 6:
-                    dayName = "суббота";
+                    dayName = "Суббота";
                     break;
                 case 7:
-                    dayName = "воскресенье";
+                    dayName = "Воскресенье";
                     break;
                 default:
-                    dayName = "ошибка";
+                    dayName = "Ошибка";
                     break;
             }
 
