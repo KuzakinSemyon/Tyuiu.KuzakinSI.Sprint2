@@ -10,7 +10,7 @@ namespace Tyuiu.KuzakinSI.Sprint2.Task0.V26.Lib
             return new bool[]
             {
                 x == y,
-                x != y, 
+                x != y,
                 x < y,
                 x > y,
                 x <= y,
