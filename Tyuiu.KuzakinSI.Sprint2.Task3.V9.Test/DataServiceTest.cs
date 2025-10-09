@@ -1,47 +1,45 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tyuiu.KuzakinSI.Sprint2.Task3.V9.Lib;
+using Tyuiu.KuzakinSI.Sprint2.Task4.V9.Lib;
 
-namespace Tyuiu.KuzakinSI.Sprint2.Task3.V9.Test
+namespace Tyuiu.KuzakinSI.Sprint2.Task4.V9.Test
 {
     [TestClass]
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidCalculateXGreaterThanZero()
+        public void ValidCalculateConditionTrue()
         {
             DataService ds = new DataService();
             
-            Assert.AreEqual(2.333, ds.Calculate(22));
-            Assert.AreEqual(-2.0, ds.Calculate(1));
-            Assert.AreEqual(1.8, ds.Calculate(10));
+            // x + 5 < y / 2 = true
+            double x = 1;
+            double y = 20;
+            double wait = Math.Pow(7 + 1 / (x * x), y);
+            Assert.AreEqual(Math.Round(wait, 3), Math.Round(ds.Calculate(x, y), 3));
         }
 
         [TestMethod]
-        public void ValidCalculateXEqualToZero()
+        public void ValidCalculateConditionFalse()
         {
             DataService ds = new DataService();
             
-            Assert.AreEqual(1.0, ds.Calculate(0));
+            // x + 5 < y / 2 = false
+            double x = 5;
+            double y = 2;
+            double wait = Math.Pow(x, 4) - (3 / y);
+            Assert.AreEqual(Math.Round(wait, 3), Math.Round(ds.Calculate(x, y), 3));
         }
 
         [TestMethod]
-        public void ValidCalculateXBetweenMinus13AndZero()
+        public void ValidCalculateBorderCase()
         {
             DataService ds = new DataService();
             
-            Assert.AreEqual(1.061, ds.Calculate(-1));
-            Assert.AreEqual(1.009, ds.Calculate(-5));
-            Assert.AreEqual(1.023, ds.Calculate(-10));
-        }
-
-        [TestMethod]
-        public void ValidCalculateXLessThanMinus13()
-        {
-            DataService ds = new DataService();
-            
-            Assert.AreEqual(-154.071, ds.Calculate(-15));
-            Assert.AreEqual(-204.05, ds.Calculate(-20));
-            Assert.AreEqual(-1004.01, ds.Calculate(-100));
+            // x + 5 = y / 2 (условие false)
+            double x = 2;
+            double y = 14; // 2 + 5 = 7, 14/2 = 7
+            double wait = Math.Pow(x, 4) - (3 / y);
+            Assert.AreEqual(Math.Round(wait, 3), Math.Round(ds.Calculate(x, y), 3));
         }
     }
 }
